@@ -1,8 +1,8 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TestApp {
 
@@ -15,9 +15,9 @@ public class TestApp {
 
  @Test
   public void testQuality(){
-    assertTrue(Money.dollar(5).equals(Money.dollar(5)));
-    assertFalse(Money.dollar(5).equals(Money.dollar(6)));
-    assertFalse(Money.franc(5).equals(Money.dollar(5)));
+   Assert.assertEquals(Money.dollar(5), Money.dollar(5));
+   assertNotEquals(Money.dollar(5), Money.dollar(6));
+   assertNotEquals(Money.franc(5), Money.dollar(5));
  }
 
   @Test
